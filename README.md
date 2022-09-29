@@ -13,9 +13,8 @@
 - run ```docker-compose down``` within the same directory to teardown the service and network.
 ### Customization
 - the YAML schema file in /doc is mounted by docker. Within this file all endpoints and responses are defined. You can change the content of the file on the host system and see the changes immediatly after refreshing the service in your browser. 
-- you could also add more files in this directory to test another API. Examples are provided [here](https://github.com/OAI/OpenAPI-Specification/tree/main/examples/v3.0). Just change the file name in the docker compose file from swagger.yaml to whatever your new file is called and execute ```docker-compose up -d``` again.
+- you could also add more files in this directory to test another API. Examples are provided [here](https://github.com/OAI/OpenAPI-Specification/tree/main/examples/v3.0). Just change the file name in the docker compose file from swagger.yaml to whatever your new file is called and execute ```docker-compose up -d``` again. You can also to create your custom yaml file, use [this](https://editor.swagger.io) or [this](https://editor-next.swagger.io) onlineeditor or any local tool. VS Code has a good [extension](https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi)
 - if you want to run the api under a different port you can change this in the docker compose file as well. Keep the mapping to 8080 (internal docker port) and change 10000 to whatever you prefer and execute ```docker-compose up -d```.
 
-## How to create this scenario yourself
-- To create the yaml file, use [this](https://editor.swagger.io) or [this](https://editor-next.swagger.io) onlineeditor or any local tool. VS Code has a good [extension](https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi)
-
+## Integration
+This mocked API is used by the demo service (Link) in this repository.
