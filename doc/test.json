@@ -23,18 +23,6 @@
             {
               "key": "Content-Type",
               "value": "text/plain"
-            },
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": ""
-            },
-            {
-              "key": "Access-Control-Allow-Methods",
-              "value": ""
-            },
-            {
-              "key": "Access-Control-Allow-Headers",
-              "value": ""
             }
           ],
           "filePath": "",
@@ -66,18 +54,6 @@
             {
               "key": "Content-Type",
               "value": "application/json"
-            },
-            {
-              "key": "Access-Control-Allow-Origin",
-              "value": ""
-            },
-            {
-              "key": "Access-Control-Allow-Methods",
-              "value": ""
-            },
-            {
-              "key": "Access-Control-Allow-Headers",
-              "value": ""
             }
           ],
           "filePath": "",
@@ -101,7 +77,7 @@
       "responses": [
         {
           "uuid": "ed556ff2-7120-463e-a751-b5a681fd09e9",
-          "body": "",
+          "body": "user added",
           "latency": 0,
           "statusCode": 200,
           "label": "Success",
@@ -132,7 +108,7 @@
       "responses": [
         {
           "uuid": "b448b5f5-ff44-440c-be26-85ea92a3f834",
-          "body": "",
+          "body": "user changed",
           "latency": 0,
           "statusCode": 200,
           "label": "Success",
