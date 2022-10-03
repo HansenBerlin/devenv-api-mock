@@ -1,0 +1,307 @@
+{
+  "uuid": "530b6f92-6c47-4a62-b376-c92a4539f5fa",
+  "lastMigration": 20,
+  "name": "MinimalApi",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3004,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "e1e42d58-cd90-4e49-acad-a355bd8d4b99",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "",
+      "responses": [
+        {
+          "uuid": "d77ed09c-0f23-4fe6-b27c-a4cf3feb5acc",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": ""
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": ""
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": ""
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "3aeb7f16-9070-4a4d-8042-3cf509f53880",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "users",
+      "responses": [
+        {
+          "uuid": "09d480e4-f82a-4c37-a2dd-f0f3ec084118",
+          "body": "[\n  {\n    \"id\": 1,\n    \"userName\": \"userone\",\n    \"mail\": \"userone@mail.com\",\n    \"age\": 22\n  },\n  {\n    \"id\": 2,\n    \"userName\": \"usertwo\",\n    \"mail\": \"usertwo@mail.com\",\n    \"age\": 34\n  },\n  {\n    \"id\": 3,\n    \"userName\": \"userthree\",\n    \"mail\": \"userthree@mail.com\",\n    \"age\": 42\n  },\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": ""
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": ""
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": ""
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "d99801a3-80af-456e-9ddb-7e63ef1545c0",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "users",
+      "responses": [
+        {
+          "uuid": "ed556ff2-7120-463e-a751-b5a681fd09e9",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "afc1a07e-bc7a-4ac3-b90d-6ef5b7387033",
+      "documentation": "",
+      "method": "put",
+      "endpoint": "users",
+      "responses": [
+        {
+          "uuid": "b448b5f5-ff44-440c-be26-85ea92a3f834",
+          "body": "",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "4c953f21-6944-43d5-80e7-0e495b7402b5",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "users/:id",
+      "responses": [
+        {
+          "uuid": "9e6ffce1-f7b0-475c-ac09-844e7cf5ae70",
+          "body": "{\n  \"id\": {{urlParam 'age'}},\n  \"userName\": \"userone\",\n  \"mail\": \"userone@mail.de\",\n  \"age\": 22\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "1",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "d73c73b9-b374-4b67-805b-22b88c8ba6f8",
+      "documentation": "",
+      "method": "delete",
+      "endpoint": "users/:id",
+      "responses": [
+        {
+          "uuid": "97d23563-5eaa-4708-994a-8d145bc68e51",
+          "body": "user not found",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "2",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "22ec45f8-fc46-463a-9a4f-ae4d8a4776c2",
+          "body": "user deleted",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "dbdbaed7-a53f-40d2-abc5-bd77e2e81d8b",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "users/age/:age",
+      "responses": [
+        {
+          "uuid": "7e0c1764-8197-4214-aa75-67dccb383fb7",
+          "body": "{\n  \"id\": 1,\n  \"userName\": \"userone\",\n  \"mail\": \"userone@mail.de\",\n  \"age\": {{add (urlParam 'age') 1}}\n},\n{\n  \"id\": 2,\n  \"userName\": \"usertwo\",\n  \"mail\": \"usertwo@mail.de\",\n  \"age\": {{add (urlParam 'age') 12}}\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}

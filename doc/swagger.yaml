@@ -1,23 +1,233 @@
 openapi: 3.0.1
 info:
-  title: MiniTodoAPI
+  title: MinimalApi
   version: '1.0'
 paths:
   /:
     get:
       tags:
-        - MiniTodoAPI
+        - MinimalApi
       responses:
         '200':
           description: Success
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+            Access-Control-Allow-Methods:
+              schema:
+                type: string
+            Access-Control-Allow-Headers:
+              schema:
+                type: string
           content:
             text/plain:
               schema:
                 type: string
-  /todos:
+  /users:
     get:
       tags:
-        - MiniTodoAPI
+        - MinimalApi
+      responses:
+        '200':
+          description: Success
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+            Access-Control-Allow-Methods:
+              schema:
+                type: string
+            Access-Control-Allow-Headers:
+              schema:
+                type: string
+          
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ServiceUser'
+              examples:
+                getAllResponseOne:
+                  value: |-
+                    [
+                      {
+                        "id": 1,
+                        "userName": "UserEight",
+                        "mail": "usereight@mail.com",
+                        "age": 100
+                      },
+                      {
+                        "id": 2,
+                        "userName": "UserOne",
+                        "mail": "userone@mail.com",
+                        "age": 18
+                      },
+                      {
+                        "id": 3,
+                        "userName": "UserTwo",
+                        "mail": "usertwo@mail.com",
+                        "age": 25
+                      },
+                      {
+                        "id": 6,
+                        "userName": "UserFive",
+                        "mail": "userfive@mail.com",
+                        "age": 50
+                      },
+                      {
+                        "id": 7,
+                        "userName": "UserSix",
+                        "mail": "usersix@mail.com",
+                        "age": 42
+                      },
+                      {
+                        "id": 8,
+                        "userName": "UserSeven",
+                        "mail": "userseven@mail.com",
+                        "age": 66
+                      },
+                      {
+                        "id": 9,
+                        "userName": "test",
+                        "mail": "test@test.de",
+                        "age": 12
+                      },
+                      {
+                        "id": 10,
+                        "userName": "test",
+                        "mail": "test@test.de",
+                        "age": 0
+                      },
+                      {
+                        "id": 11,
+                        "userName": "test",
+                        "mail": "test@test.de",
+                        "age": 12
+                      },
+                      {
+                        "id": 12,
+                        "userName": "test",
+                        "mail": "test@test.de",
+                        "age": 12
+                      },
+                      {
+                        "id": 13,
+                        "userName": "test",
+                        "mail": "test@test.de",
+                        "age": 12
+                      },
+                      {
+                        "id": 14,
+                        "userName": "test",
+                        "mail": "test@test.de",
+                        "age": 12
+                      },
+                      {
+                        "id": 15,
+                        "userName": "test",
+                        "mail": "test@test.de",
+                        "age": 12
+                      },
+                      {
+                        "id": 16,
+                        "userName": "test",
+                        "mail": "test@test.de",
+                        "age": 12
+                      },
+                      {
+                        "id": 17,
+                        "userName": "testnamenewuser",
+                        "mail": "test@test.de",
+                        "age": 12
+                      },
+                      {
+                        "id": 18,
+                        "userName": "testnamenewuser",
+                        "mail": "test@test.de",
+                        "age": 12
+                      },
+                      {
+                        "id": 19,
+                        "userName": "testnamenewuser",
+                        "mail": "test@test.de",
+                        "age": 12
+                      }
+                    ]
+    post:
+      tags:
+        - MinimalApi
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceUser'
+      responses:
+        '200':
+          description: Success
+    put:
+      tags:
+        - MinimalApi
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceUser'
+      responses:
+        '200':
+          description: Success
+  /users/{id}:
+    get:
+      tags:
+        - MinimalApi
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUser'
+              examples:
+                GetByIdResponseOne:
+                  value: |-
+                    {
+                      "id": 1,
+                      "userName": "UserOne",
+                      "mail": "userone@mail.com",
+                      "age": 18
+                    }
+    delete:
+      tags:
+        - MinimalApi
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+  /users/age/{age}:
+    get:
+      tags:
+        - MinimalApi
+      parameters:
+        - name: age
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
       responses:
         '200':
           description: Success
@@ -26,100 +236,57 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ToDo'
+                  $ref: '#/components/schemas/ServiceUser'
               examples:
-                todoone:
+                GetByAgeResponseOne:
                   value: |-
                     [
                       {
-                        "id": 1,
-                        "text": "string",
-                        "status": "string"
+                        "id": 4,
+                        "userName": "UserFour",
+                        "mail": "userfour@mail.com",
+                        "age": 44
                       },
                       {
-                        "id": 2,
-                        "text": "string2",
-                        "status": "string2"
+                        "id": 5,
+                        "userName": "UserFive",
+                        "mail": "userfive@mail.com",
+                        "age": 50
                       },
                       {
-                        "id": 3,
-                        "text": "string2",
-                        "status": "string2"
+                        "id": 6,
+                        "userName": "UserSix",
+                        "mail": "usersix@mail.com",
+                        "age": 42
+                      },
+                      {
+                        "id": 7,
+                        "userName": "UserSeven",
+                        "mail": "userseven@mail.com",
+                        "age": 66
+                      },
+                      {
+                        "id": 8,
+                        "userName": "UserEight",
+                        "mail": "usereight@mail.com",
+                        "age": 100
                       }
                     ]
-    post:
-      tags:
-        - MiniTodoAPI
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ToDo'
-      responses:
-        '200':
-          description: Success
-    put:
-      tags:
-        - MiniTodoAPI
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ToDo'
-      responses:
-        '200':
-          description: Success
-  /todos/{id}:
-    get:
-      tags:
-        - MiniTodoAPI
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
-            format: int32
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ToDo'
-              examples:
-                getsingleitem:
-                  value: |-
-                    {
-                      "id": 1,
-                      "text": "string",
-                      "status": "string"
-                    }
-    delete:
-      tags:
-        - MiniTodoAPI
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
-            format: int32
-      responses:
-        '200':
-          description: Success
 components:
   schemas:
-    ToDo:
+    ServiceUser:
       type: object
       properties:
         id:
           type: integer
           format: int32
-        text:
+        userName:
           type: string
           nullable: true
-        status:
+        mail:
           type: string
           nullable: true
+        age:
+          type: integer
+          format: int32
       additionalProperties: false
