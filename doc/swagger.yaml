@@ -289,4 +289,8 @@ components:
         age:
           type: integer
           format: int32
+<<<<<<< HEAD
       additionalProperties: false
+=======
+      additionalProperties: false
+>>>>>>> bccc8205938f4686294b26d8e002a5cefc180a47

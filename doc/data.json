@@ -15,7 +15,7 @@
       "responses": [
         {
           "uuid": "d77ed09c-0f23-4fe6-b27c-a4cf3feb5acc",
-          "body": "",
+          "body": "Minimal Users Api",
           "latency": 0,
           "statusCode": 200,
           "label": "Success",
