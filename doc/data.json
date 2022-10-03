@@ -163,7 +163,7 @@
       "responses": [
         {
           "uuid": "4bc0b809-48e0-40b9-82a6-f8607604f564",
-          "body": "{\n  \"id\": {{urlParam 'age'}},\n  \"userName\": \"userone\",\n  \"mail\": \"userone@mail.de\",\n  \"age\": 22\n}",
+          "body": "{\n  \"id\": {{urlParam 'id'}},\n  \"userName\": \"userone\",\n  \"mail\": \"userone@mail.de\",\n  \"age\": 22\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "Success",
@@ -200,33 +200,6 @@
       "endpoint": "users/:id",
       "responses": [
         {
-          "uuid": "a8a94d66-cc0a-477b-aeaa-52feab636bb3",
-          "body": "user not found",
-          "latency": 0,
-          "statusCode": 200,
-          "label": "Success",
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "filePath": "",
-          "sendFileAsBody": false,
-          "rules": [
-            {
-              "target": "params",
-              "modifier": "id",
-              "value": "2",
-              "operator": "equals"
-            }
-          ],
-          "rulesOperator": "OR",
-          "disableTemplating": false,
-          "fallbackTo404": false,
-          "default": false
-        },
-        {
           "uuid": "b407adfb-1182-449c-b186-b7e540175ff5",
           "body": "user deleted",
           "latency": 0,
@@ -254,7 +227,7 @@
       "responses": [
         {
           "uuid": "6e0dd2f4-c7c2-457f-b3d9-33351349c850",
-          "body": "{\n  \"id\": 1,\n  \"userName\": \"userone\",\n  \"mail\": \"userone@mail.de\",\n  \"age\": {{add (urlParam 'age') 1}}\n},\n{\n  \"id\": 2,\n  \"userName\": \"usertwo\",\n  \"mail\": \"usertwo@mail.de\",\n  \"age\": {{add (urlParam 'age') 12}}\n}",
+          "body": "\n[\n  {\n  \"id\": 1,\n  \"userName\": \"userone\",\n  \"mail\": \"userone@mail.de\",\n  \"age\": {{add (urlParam 'age') 1}}\n},\n{\n  \"id\": 2,\n  \"userName\": \"usertwo\",\n  \"mail\": \"usertwo@mail.de\",\n  \"age\": {{add (urlParam 'age') 12}}\n}\n]\n",
           "latency": 0,
           "statusCode": 200,
           "label": "Success",
